@@ -1,23 +1,29 @@
 package com.educandoweb.curso.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
 
 
     @Serial
     private static final long serialVersionUID = 4912383430841816110L;
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
     private String phone;
     private String password;
 
-    public User(){}
+    public User() {
+    }
 
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
@@ -79,12 +85,6 @@ public class User implements Serializable {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-
-
-
-
-
 
 
 }
