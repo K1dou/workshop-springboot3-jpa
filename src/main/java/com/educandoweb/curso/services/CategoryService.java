@@ -21,6 +21,7 @@ public class CategoryService {
 
     }
 
+
     public Category findById(Integer id){
         Optional<Category> obj = categoryRepository.findById(id);
         return obj.get();
